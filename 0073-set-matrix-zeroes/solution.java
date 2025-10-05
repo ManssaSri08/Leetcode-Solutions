@@ -13,7 +13,7 @@ class Solution {
                     for(int k=0;k<row;k++)
                         matrix[k][j]=0;
                 }   
-            }   
+            }
         }
     }
 }
