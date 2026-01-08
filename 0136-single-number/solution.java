@@ -1,15 +1,10 @@
 import java.util.HashSet;
 class Solution {
     public int singleNumber(int[] nums) {
-        HashSet<Integer> set=new HashSet<>();
-        for(int num:nums){
-            if(set.contains(num))
-            set.remove(num);
-            else
-            set.add(num);
+        int xor=0;
+        for(int i=0;i<nums.length;i++){
+            xor^=nums[i];
         }
-        for (int num : set)
-            return num;
-        return -1;
+        return xor;
     }
 }
