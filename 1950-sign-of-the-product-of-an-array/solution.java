@@ -1,11 +1,12 @@
 class Solution {
     
     public int arraySign(int[] nums) {
-        int neg=0;
-        for(int num:nums){
-            if(num==0) return 0;
-            if(num<0) neg++;
+        int prod=1;
+        for(int n:nums){
+            if(n>0) prod*=1;
+            else if(n<0) prod*=-1;
+            else return 0;
         }
-        return (neg%2==0)?1:-1;
+        return prod;
     }
 }
