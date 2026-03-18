@@ -2,11 +2,11 @@ class Solution {
     public int search(int[] nums, int target) {
         int start=0,end=nums.length-1,mid=0;
         while(start<=end){
-            mid=(start+end)/2;
+            mid=start+(end-start)/2;
             if(nums[mid]==target){
                 return mid;
             }
-            if(nums[start]<=nums[mid]){
+            else if(nums[start]<=nums[mid]){
                 if(target<=nums[mid] && target>=nums[start]){
                     end=mid-1;
                 }
