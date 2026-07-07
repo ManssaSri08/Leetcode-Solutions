@@ -1,15 +1,19 @@
 class Solution {
     public boolean isHappy(int n) {
-        int pv=(int)Math.log10(n)+1;
-        while(n!=1 && n!=4){
-            int sum=0;
-            while(n>0){
-                int d=n%10;
-                sum+=d*d;
-                n/=10;
-            }
-            n=sum;
+        int slow=n, fast=n;
+        do{
+            slow=squareSum(slow);
+            fast=squareSum(squareSum(fast));
+        }while(slow!=fast);
+        return slow==1;
+    }
+    public int squareSum(int n){
+        int sum=0;
+        while(n>0){
+            int rem=n%10;
+            sum+=rem*rem;
+            n/=10;
         }
-        return n==1;
+        return sum;
     }
 }
