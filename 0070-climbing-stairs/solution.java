@@ -1,12 +1,11 @@
 class Solution {
+    public static int fun(int[] dp,int n){
+        if(n<=3) return n;
+        if(dp[n-1]!=0) return dp[n-1];
+        return dp[n-1]=fun(dp,n-1)+fun(dp,n-2);
+    }
     public int climbStairs(int n) {
-        if(n<=2) return n;
-        int first=1,second=2,current=0;
-        for(int i=3;i<=n;i++){
-            current=first+second;
-            first=second;
-            second=current;
-        }
-        return current;
+        int[] dp=new int[n];
+        return fun(dp,n);
     }
 }
