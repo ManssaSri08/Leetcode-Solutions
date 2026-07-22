@@ -1,13 +1,14 @@
 class Solution {
+    //memoization
     public int fib(int n) {
-        if (n == 0) return 0;
-        if (n == 1) return 1;
-        int a=0,b=1;
-        for(int i=1;i<n;i++){
-            int next=a+b;
-            a=b;
-            b=next;
-        }
-        return b;
+        if(n<=1) return n;
+        int[] dp=new int[n+1];
+        Arrays.fill(dp,-1);
+        return fun(n,dp);
+    }
+    public int fun(int i,int[] dp){
+        if(i<=1) return i;
+        if(dp[i]!=-1) return dp[i];
+        return dp[i]=fun(i-1,dp)+fun(i-2,dp);
     }
 }
