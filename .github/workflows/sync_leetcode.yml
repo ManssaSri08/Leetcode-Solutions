@@ -3,7 +3,7 @@ name: Sync LeetCode
 on:
   workflow_dispatch:
   schedule:
-    - cron: "6 19 * * *"
+    - cron: "0 0 * * *"
       timezone: "Asia/Kolkata"
 
 jobs:
