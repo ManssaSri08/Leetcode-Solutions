@@ -1,8 +1,8 @@
 class Solution {
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
-        if(!wordList.contains(endWord)) return 0;
-        Queue<String> q=new LinkedList<>();
         Set<String> set=new HashSet<>(wordList);
+        if(!set.contains(endWord)) return 0;
+        Queue<String> q=new LinkedList<>();
         q.offer(beginWord);
         int count=1;
         while(!q.isEmpty()){
@@ -17,8 +17,8 @@ class Solution {
                         String temp=new String(ch);
                         if(temp.equals(endWord)) return count;
                         if(set.contains(temp)){
-                            q.offer(temp);
                             set.remove(temp);
+                            q.offer(temp);
                         }
                     }
                     ch[j]=safe;
