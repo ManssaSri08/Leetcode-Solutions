@@ -1,0 +1,22 @@
+/*
+LeetCode: 944. Delete Columns to Make Sorted
+Runtime: 8
+Memory: 47216000
+*/
+
+class Solution {
+    public int minDeletionSize(String[] strs) {
+        int row=strs.length;
+        int col=strs[0].length();
+        int count=0;
+        for(int c=0;c<col;c++){
+            for(int r=1;r<row;r++){
+                if(strs[r].charAt(c)<strs[r-1].charAt(c)){
+                    count++;
+                    break;
+                }
+            }
+        }
+        return count;
+    }
+}

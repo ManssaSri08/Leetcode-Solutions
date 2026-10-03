@@ -1,0 +1,22 @@
+/*
+LeetCode: 3075. Maximize Happiness of Selected Children
+Runtime: 42
+Memory: 109300000
+*/
+
+class Solution {
+    public long maximumHappinessSum(int[] happiness, int k) {
+        Arrays.sort(happiness);
+        long sum = 0;
+        int decrease = 0;
+        for (int i = happiness.length - 1; i >= 0 && k > 0; i--) {
+            int current = happiness[i] - decrease;
+            if (current > 0) {
+                sum += current;
+            }
+            decrease++;
+            k--;
+        }
+        return sum;
+    }
+}

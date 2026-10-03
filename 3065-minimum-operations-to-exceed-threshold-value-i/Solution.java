@@ -1,0 +1,16 @@
+/*
+LeetCode: 3065. Minimum Operations to Exceed Threshold Value I
+Runtime: N/A
+Memory: 44592000
+*/
+
+class Solution {
+    public int minOperations(int[] nums, int k) {
+        int count=0;
+        for(int num:nums){
+            if(num<k)
+                count++;
+        }
+        return count;
+    }
+}

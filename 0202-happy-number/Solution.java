@@ -1,0 +1,25 @@
+/*
+LeetCode: 202. Happy Number
+Runtime: 1
+Memory: 42292000
+*/
+
+class Solution {
+    public boolean isHappy(int n) {
+        int slow=n, fast=n;
+        do{
+            slow=squareSum(slow);
+            fast=squareSum(squareSum(fast));
+        }while(slow!=fast);
+        return slow==1;
+    }
+    public int squareSum(int n){
+        int sum=0;
+        while(n>0){
+            int rem=n%10;
+            sum+=rem*rem;
+            n/=10;
+        }
+        return sum;
+    }
+}
