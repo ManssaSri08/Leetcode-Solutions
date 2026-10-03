@@ -1,4 +1,3 @@
-```yaml
 name: Sync LeetCode
 
 on:
@@ -267,4 +266,3 @@ jobs:
             git commit -m "[LeetCode Sync] Daily sync"
             git push
           fi
-```
